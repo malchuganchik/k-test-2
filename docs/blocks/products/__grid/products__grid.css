@@ -11,9 +11,16 @@
     margin-right: auto;
 }
 
+@media (max-width: 1024px) {
+    .products__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
 @media (max-width: 600px) {
     .products__grid {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-template-columns: 1fr;
         gap: 16px;
     }
 }

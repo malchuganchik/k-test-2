@@ -147,7 +147,34 @@
 }
 
 @media (max-width: 480px) {
+    .product-card {
+        height: auto;
+        min-height: 280px;
+    }
+    
     .product-card__media {
-        height: 180px;
+        height: 140px;
+    }
+
+    .product-card__content {
+        padding: 10px;
+    }
+
+    .product-card__name {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .product-card__farmer {
+        font-size: 0.75rem;
+    }
+
+    .product-card__price {
+        font-size: 1.1rem;
+    }
+
+    .product-card__add-btn {
+        width: 32px;
+        height: 32px;
     }
 }

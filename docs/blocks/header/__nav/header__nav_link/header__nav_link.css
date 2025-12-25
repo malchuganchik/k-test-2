@@ -31,6 +31,13 @@
 
 /* На мобильном меню (фон белый) — делаем ссылки тёмными для контраста */
 @media (max-width: 768px) {
-    .header__nav-link { color: var(--dark); }
+    .header__nav-link {
+        color: var(--dark);
+        display: block;
+        text-align: left;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
     .header__nav-link--active { color: var(--primary); }
+    .header__nav-link:last-child { border-bottom: none; }
 }

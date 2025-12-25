@@ -4,14 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Мобильное меню
     const burgerBtn = document.querySelector('.header__burger');
     const nav = document.querySelector('.header__nav');
-    
+    const header = document.querySelector('.header');
+
     if (burgerBtn && nav) {
         burgerBtn.addEventListener('click', () => {
             nav.classList.toggle('header__nav--active');
             burgerBtn.classList.toggle('header__burger--active');
             document.body.classList.toggle('no-scroll');
         });
-        
+
         // Закрытие меню при клике на ссылку
         nav.querySelectorAll('.header__nav-link').forEach(link => {
             link.addEventListener('click', () => {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.remove('no-scroll');
             });
         });
-        
+
         // Закрытие меню при клике вне его
         document.addEventListener('click', (e) => {
             if (!nav.contains(e.target) && !burgerBtn.contains(e.target) && nav.classList.contains('header__nav--active')) {
@@ -30,6 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Скрытие header при скроле вниз
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (header) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Скролл вниз
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Скролл вверх
+                header.style.transform = 'translateY(0)';
+            }
+        }
+        lastScrollTop = scrollTop;
+    });
     
     // Поиск (базовая функциональность)
     const searchInput = document.getElementById('header-search');

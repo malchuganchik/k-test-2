@@ -9,14 +9,14 @@
     max-width: none;
     margin: 0 auto; /* Center it */
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .header__inner {
         width: 90%;
         padding: 15px 20px;
     }
 }
 @media (max-width: 480px) {
-    .header__inner { 
+    .header__inner {
         width: 100%;
         padding: 10px 15px;
     }
